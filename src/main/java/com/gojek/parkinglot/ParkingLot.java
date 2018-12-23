@@ -108,7 +108,7 @@ public class ParkingLot {
                 String key = Integer.toString(i);
                 if (this.map1.containsKey(key)) {
                     car = this.map1.get(key);
-                    System.out.println(i + "\t\t\t" + car.regNo + "\t\t\t" + car.color);
+                    System.out.println(i + "\t\t\t" + car.regNo + "\t\t" + car.color);
                 }
             }
             System.out.println();
