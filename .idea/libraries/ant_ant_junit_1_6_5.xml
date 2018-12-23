@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="ant:ant-junit:1.6.5">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/ant/ant-junit/1.6.5/ant-junit-1.6.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
