@@ -302,6 +302,34 @@ Output:
 Not found
 ```
 
+#Project Requirements
+
+1. Latest version of JDK.
+2. Latest version of maven.
+
+
+#Build Instructions
+
+Run the following command -
+```sh
+mvn clean install
+```
+
+
+#Running the project
+
+From the project directory, run this command -
+
+```java
+   1. $ ./bin/parking_lot.sh <input_filepath>
+      The inputs commands are expected and taken from the file specified
+   2. $ ./bin/parking_lot.sh
+      This will start the program in interactive mode The allowed inputs are
+      create_parking_lot <no_of_slots> park <reg_no> leave <slot_number> status
+      registration_numbers_for_cars_with_colour slot_numbers_for_cars_with_colour
+      slot_number_for_registration_number <reg_no>
+```
+
 
 
 
