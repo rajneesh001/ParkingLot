@@ -24,7 +24,7 @@ public class Main {
                         String inputString = bufferRead.readLine();
                         if (inputString.equalsIgnoreCase("exit")) {
                             break;
-                        } else if ((inputString == null) || (inputString.isEmpty())) {
+                        } else if ((inputString == null) || (inputString.length() == 0)) {
                             break;
                             // Do nothing
                         } else {

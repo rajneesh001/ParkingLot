@@ -26,9 +26,11 @@ public class ParkingLotTest {
     }
     @Test
     public void createParkingLot() throws Exception {
-        parkingLot.createParkingLot("6");
+        parkingLot.createParkingLot("6","4");
         assertEquals(6, parkingLot.MAX_SIZE);
         assertEquals(6, parkingLot.availableSlotList.size());
+        assertEquals(6, parkingLot.MAX_FLOOR);
+        assertEquals(6, parkingLot.availablefloors.size());
         assertTrue("createdparkinglotwith6slots".equalsIgnoreCase(outContent.toString().trim().replace(" ", "")));
     }
 
@@ -39,7 +41,7 @@ public class ParkingLotTest {
         assertEquals("Sorry,parkinglotisnotcreated\n" +
                 "\n" +
                 "Sorry,parkinglotisnotcreated", outContent.toString().trim().replace(" ", ""));
-        parkingLot.createParkingLot("6");
+        parkingLot.createParkingLot("6","4");
         parkingLot.park("KA-01-HH-1234", "White");
         parkingLot.park("KA-01-HH-9999", "White");
         assertEquals(4, parkingLot.availableSlotList.size());
@@ -47,12 +49,12 @@ public class ParkingLotTest {
 
     @Test
     public void leave() throws Exception {
-        parkingLot.leave("2");
+        parkingLot.leave("2","1");
         assertEquals("Sorry,parkinglotisnotcreated", outContent.toString().trim().replace(" ", ""));
-        parkingLot.createParkingLot("6");
+        parkingLot.createParkingLot("6","4");
         parkingLot.park("KA-01-HH-1234", "White");
         parkingLot.park("KA-01-HH-9999", "White");
-        parkingLot.leave("4");
+        parkingLot.leave("4","1");
         assertEquals("Sorry,parkinglotisnotcreated\n" +
                 "\n" +
                 "Createdparkinglotwith6slots\n" +
@@ -68,7 +70,7 @@ public class ParkingLotTest {
     public void status() throws Exception {
         parkingLot.status();
         assertEquals("Sorry,parkinglotisnotcreated", outContent.toString().trim().replace(" ", ""));
-        parkingLot.createParkingLot("6");
+        parkingLot.createParkingLot("6","4");
         parkingLot.park("KA-01-HH-1234", "White");
         parkingLot.park("KA-01-HH-9999", "White");
         parkingLot.status();
@@ -90,7 +92,7 @@ public class ParkingLotTest {
 
         parkingLot.getRegistrationNumbersFromColor("White");
         assertEquals("Sorry,parkinglotisnotcreated", outContent.toString().trim().replace(" ", ""));
-        parkingLot.createParkingLot("6");
+        parkingLot.createParkingLot("6","4");
         parkingLot.park("KA-01-HH-1234", "White");
         parkingLot.park("KA-01-HH-9999", "White");
         parkingLot.getRegistrationNumbersFromColor("White");
@@ -121,7 +123,7 @@ public class ParkingLotTest {
     public void getSlotNumbersFromColor() throws Exception {
         parkingLot.getSlotNumbersFromColor("White");
         assertEquals("Sorry,parkinglotisnotcreated", outContent.toString().trim().replace(" ", ""));
-        parkingLot.createParkingLot("6");
+        parkingLot.createParkingLot("6","4");
         parkingLot.park("KA-01-HH-1234", "White");
         parkingLot.park("KA-01-HH-9999", "White");
         parkingLot.getSlotNumbersFromColor("White");
@@ -153,7 +155,7 @@ public class ParkingLotTest {
     public void getSlotNumberFromRegNo() throws Exception {
         parkingLot.getSlotNumberFromRegNo("KA-01-HH-1234");
         assertEquals("Sorry,parkinglotisnotcreated", outContent.toString().trim().replace(" ", ""));
-        parkingLot.createParkingLot("6");
+        parkingLot.createParkingLot("6","4");
         parkingLot.park("KA-01-HH-1234", "White");
         parkingLot.park("KA-01-HH-9999", "White");
         parkingLot.getSlotNumberFromRegNo("KA-01-HH-1234");
@@ -177,7 +179,7 @@ public class ParkingLotTest {
                 "\n" +
                 "1\n" +
                 "2", outContent.toString().trim().replace(" ", ""));
-        parkingLot.leave("1");
+        parkingLot.leave("1","1");
         parkingLot.getSlotNumberFromRegNo("KA-01-HH-1234");
         assertEquals("Sorry,parkinglotisnotcreated\n" +
                 "\n" +
